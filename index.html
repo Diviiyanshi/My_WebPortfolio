@@ -9,7 +9,25 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0f172a;color:#fff;font-size:14px;line-height:1.5}
+<!-- POPUP -->
+<div id="popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;">
+<div style="background:#1e293b;padding:20px;border-radius:10px;text-align:center">
+<h3>Let's Work Together</h3>
+<p>Interested in collaborating?</p>
+<button onclick="window.open('resume.pdf')">Download Resume</button><br><br>
+<button class="btn" onclick="openPopup()">Hire Me</button>
+</div>
+</div>
+
+<script>
+function openPopup(){
+document.getElementById("popup").style.display="flex";
+}
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+</script>
+  body{background:#0f172a;color:#fff;font-size:14px;line-height:1.5}
 section{max-width:1000px;margin:auto;padding:30px 15px}
 
 /* NAV */
@@ -126,7 +144,8 @@ BN4L rollout with EWM/TM support and stabilization.
 <b>ICAR Robotics</b><br>
 AI-based agricultural sprayer improving efficiency.
 </div>
-
+<button class="btn" onclick="window.open('case-study.html')">View Case Study</button>
+  
 </div>
 
 </section>
@@ -138,6 +157,20 @@ AI-based agricultural sprayer improving efficiency.
 <span>AWS</span><span>Azure</span><span>Agile</span>
 <span>Jira</span><span>Power BI</span><span>MuleSoft</span>
 </div>
+</section>
+  <section>
+<h3>Recommendations</h3>
+
+<div class="card">
+“Devanshi is highly organized and delivers projects with precision. Her stakeholder management is exceptional.”
+<br><span style="font-size:12px;color:#aaa">– Senior Manager</span>
+</div>
+
+<div class="card">
+“Strong leadership and SAP knowledge. She handled complex projects efficiently.”
+<br><span style="font-size:12px;color:#aaa">– Client Partner</span>
+</div>
+
 </section>
 
 <section id="contact">
