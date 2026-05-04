@@ -9,52 +9,17 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-<!-- POPUP -->
-<div id="popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;">
-<div style="background:#1e293b;padding:20px;border-radius:10px;text-align:center">
-<h3>Let's Work Together</h3>
-<p>Interested in collaborating?</p>
-<button onclick="window.open('resume.pdf')">Download Resume</button><br><br>
-<button class="btn" onclick="openPopup()">Hire Me</button>
-</div>
-</div>
-
-<script>
-function openPopup(){
-document.getElementById("popup").style.display="flex";
-}
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
-</script>
-  body{background:#0f172a;color:#fff;font-size:14px;line-height:1.5}
-section{max-width:1000px;margin:auto;padding:30px 15px}
-
-/* NAV */
-nav{display:flex;justify-content:space-between;padding:15px 30px;background:#020617;position:sticky;top:0}
+body{background:#0f172a;color:#fff;font-size:14px}
+section{max-width:1000px;margin:auto;padding:25px 15px}
+nav{display:flex;justify-content:space-between;padding:15px 25px;background:#020617;position:sticky;top:0}
 nav a{color:#ccc;text-decoration:none;margin-left:15px;font-size:13px}
-
-/* HERO */
-.hero{text-align:center;padding:60px 15px}
+.hero{text-align:center;padding:50px 15px}
 .hero h1{font-size:32px;color:#3b82f6}
-.hero p{font-size:14px;margin-top:5px;color:#aaa}
-
-/* BUTTON */
+.hero p{color:#aaa}
 .btn{margin-top:10px;padding:8px 18px;border:none;border-radius:20px;background:#3b82f6;color:#fff;cursor:pointer}
-
-/* CARD */
 .card{background:#1e293b;padding:15px;border-radius:8px;margin-bottom:12px}
-
-/* GRID */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-
-/* SMALL TEXT */
-.small{font-size:12px;color:#aaa}
-
-/* SKILLS */
 .skills span{background:#2563eb;padding:5px 10px;border-radius:15px;margin:3px;display:inline-block;font-size:12px}
-
-/* FOOTER */
 footer{text-align:center;padding:15px;font-size:12px;color:#888}
 </style>
 </head>
@@ -67,6 +32,7 @@ footer{text-align:center;padding:15px;font-size:12px;color:#888}
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
+<a href="#case">Case Study</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -74,78 +40,55 @@ footer{text-align:center;padding:15px;font-size:12px;color:#888}
 <div class="hero">
 <h1>Devanshi Saraswat</h1>
 <p>Project Manager | SAP | Cloud | Writer</p>
-<p class="small">7+ Years | Agile | SAP ERP | Global Teams</p>
+<button class="btn" onclick="openPopup()">Hire Me</button>
 <button class="btn" onclick="window.open('resume.pdf')">Resume</button>
 </div>
 
 <section id="about">
 <h3>About</h3>
 <div class="card">
-Results-driven Project Manager with strong experience in SAP ERP, cloud solutions, and Agile delivery. Skilled in leading cross-functional teams, managing end-to-end project execution, and ensuring delivery within scope, budget, and timelines. Experienced in stakeholder management, risk handling, and process optimization across global environments.
+Project Manager with 7+ years of experience in SAP ERP, cloud solutions, and Agile delivery. Skilled in stakeholder management, project execution, and delivering scalable solutions across global teams.
 </div>
 </section>
 
 <section id="experience">
 <h3>Experience</h3>
 
-<div class="card">
-<b>NTT DATA – PMO</b> <span class="small">(2025–2026)</span><br>
-Managed edge solution delivery, led 20-member team, handled MIS dashboards, SLA tracking, and stakeholder coordination.
-</div>
-
-<div class="card">
-<b>NAV IT Consulting – Project Manager</b><br>
-Led AI + Power Platform projects with SAP HANA integration, managed full lifecycle including planning, UAT, deployment, and cross-team coordination.
-</div>
-
-<div class="card">
-<b>Efficient India – Project Manager</b><br>
-Handled ERP implementations, cloud deployments (AWS/Azure/GCP), API integrations (SAP PI/PO, MuleSoft), and Agile delivery.
-</div>
-
-<div class="card">
-<b>DEV IT SERV – Manager</b><br>
-Managed SAP projects, sprint planning, backlog, DevOps optimization, and digital transformation initiatives.
-</div>
-
-<div class="card">
-<b>India HIV/AIDS Alliance</b><br>
-Implemented SAP ERP, improved procurement efficiency by <b>30%</b>, enabled transparent reporting with WHO alignment.
-</div>
-
-<div class="card">
-<b>Supreme Co-Work</b><br>
-Delivered IoT, SAP Ariba, and web development projects using Jira, Asana, MS Project.
-</div>
+<div class="card"><b>NTT DATA</b> – Managed edge projects, 20-member team, MIS & SLA delivery</div>
+<div class="card"><b>NAV IT</b> – SAP + Power Platform integration</div>
+<div class="card"><b>Efficient India</b> – ERP & Cloud deployment</div>
+<div class="card"><b>DEV IT SERV</b> – Agile SAP projects</div>
+<div class="card"><b>HIV/AIDS Alliance</b> – SAP ERP, 30% efficiency improvement</div>
 
 </section>
 
 <section id="projects">
 <h3>Projects</h3>
-
 <div class="grid">
+<div class="card">MFO SAP App</div>
+<div class="card">SAP Finance Migration</div>
+<div class="card">LANXESS Rollout</div>
+<div class="card">ICAR Robotics</div>
+</div>
+</section>
+
+<section id="case">
+<h3>Case Study</h3>
 
 <div class="card">
-<b>MFO SAP App</b><br>
-Automation app with SAP integration for logistics & gate processing.
+<b>Problem:</b> Manual logistics causing delays
 </div>
 
 <div class="card">
-<b>SAP Finance Migration</b><br>
-Handled FICO migration, financial data validation, and integration testing.
+<b>Solution:</b> Built SAP integrated automation system
 </div>
 
 <div class="card">
-<b>LANXESS Rollout</b><br>
-BN4L rollout with EWM/TM support and stabilization.
+<b>Role:</b> End-to-end project delivery & stakeholder management
 </div>
 
 <div class="card">
-<b>ICAR Robotics</b><br>
-AI-based agricultural sprayer improving efficiency.
-</div>
-<button class="btn" onclick="window.open('case-study.html')">View Case Study</button>
-  
+<b>Impact:</b> Faster processing & reduced errors
 </div>
 
 </section>
@@ -153,22 +96,20 @@ AI-based agricultural sprayer improving efficiency.
 <section>
 <h3>Skills</h3>
 <div class="skills">
-<span>SAP FICO</span><span>MM</span><span>SD</span><span>PP</span>
-<span>AWS</span><span>Azure</span><span>Agile</span>
-<span>Jira</span><span>Power BI</span><span>MuleSoft</span>
+<span>SAP</span><span>AWS</span><span>Azure</span>
+<span>Agile</span><span>Jira</span><span>Power BI</span>
 </div>
 </section>
-  <section>
+
+<section>
 <h3>Recommendations</h3>
 
 <div class="card">
-“Devanshi is highly organized and delivers projects with precision. Her stakeholder management is exceptional.”
-<br><span style="font-size:12px;color:#aaa">– Senior Manager</span>
+“Highly professional and excellent project delivery skills.”
 </div>
 
 <div class="card">
-“Strong leadership and SAP knowledge. She handled complex projects efficiently.”
-<br><span style="font-size:12px;color:#aaa">– Client Partner</span>
+“Strong SAP knowledge and leadership.”
 </div>
 
 </section>
@@ -176,7 +117,7 @@ AI-based agricultural sprayer improving efficiency.
 <section id="contact">
 <h3>Contact</h3>
 <div class="card">
-📞 +91 9606276138<br>
+📞 9606276138<br>
 📧 saraswatdivyanshi29@gmail.com<br>
 🔗 linkedin.com/in/devanshi-saraswat
 </div>
@@ -185,6 +126,21 @@ AI-based agricultural sprayer improving efficiency.
 <footer>
 © 2026 Devanshi Saraswat
 </footer>
+
+<!-- POPUP -->
+<div id="popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;">
+<div style="background:#1e293b;padding:20px;border-radius:10px;text-align:center">
+<h3>Let's Work Together</h3>
+<button onclick="window.open('resume.pdf')">Download Resume</button><br><br>
+<button onclick="window.location.href='mailto:saraswatdivyanshi29@gmail.com'">Hire Me</button><br><br>
+<button onclick="closePopup()">Close</button>
+</div>
+</div>
+
+<script>
+function openPopup(){document.getElementById("popup").style.display="flex";}
+function closePopup(){document.getElementById("popup").style.display="none";}
+</script>
 
 </body>
 </html>
