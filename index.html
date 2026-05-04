@@ -5,102 +5,166 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Devanshi Saraswat | Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f172a;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
     color: #fff;
 }
 
-header {
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* HERO */
+.hero {
     text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    padding: 100px 20px;
 }
 
-h1 {
-    margin: 0;
-    font-size: 40px;
+.hero h1 {
+    font-size: 50px;
+    background: linear-gradient(90deg,#3b82f6,#a855f7);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
-h2 {
-    border-bottom: 2px solid #7c3aed;
-    display: inline-block;
-    margin-bottom: 20px;
+.hero p {
+    margin-top: 15px;
+    font-size: 18px;
 }
 
+.btn {
+    margin-top: 25px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: linear-gradient(90deg,#3b82f6,#a855f7);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* SECTIONS */
 section {
-    padding: 40px 20px;
-    max-width: 1000px;
+    padding: 60px 20px;
+    max-width: 1100px;
     margin: auto;
 }
 
+h2 {
+    margin-bottom: 20px;
+}
+
+/* GLASS CARD */
 .card {
-    background: #1e293b;
+    background: rgba(255,255,255,0.05);
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* SKILLS */
 .skills span {
     display: inline-block;
-    background: #2563eb;
-    padding: 8px 12px;
+    padding: 8px 15px;
     margin: 5px;
     border-radius: 20px;
+    background: linear-gradient(90deg,#3b82f6,#a855f7);
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
-    background: #020617;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<nav>
+    <h3>Devanshi</h3>
+    <div>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<div class="hero">
     <h1>Devanshi Saraswat</h1>
     <p>Project Manager | SAP & Cloud | Writer</p>
-    <p>7+ years experience in SAP, ERP & Global IT Projects</p>
-</header>
+    <p>Delivering enterprise IT solutions with 7+ years experience</p>
+    <button class="btn" onclick="window.location.href='#contact'">Hire Me</button>
+</div>
 
-<section>
+<section id="about">
     <h2>About Me</h2>
     <div class="card">
-        <p>I am a results-driven Project Manager with 7+ years of experience in managing IT, SAP, and cloud-based projects. I specialize in Agile delivery, stakeholder management, and enterprise system implementations.</p>
-        <p>I have worked with global teams across Europe, Japan, and APAC. I am also a writer, which enhances my communication and storytelling skills.</p>
+        I am a Project Manager with 7+ years experience in SAP, ERP and cloud projects. 
+        I work with global teams across Europe, Japan and APAC and specialize in Agile delivery.
     </div>
 </section>
 
-<section>
+<section id="experience">
     <h2>Experience</h2>
 
     <div class="card">
-        <h3>NTT DATA - PMO</h3>
-        <p>Managed edge solution projects, led 20-member team, handled MIS reporting and SLA tracking.</p>
+        <h3>NTT DATA</h3>
+        <p>Managed edge projects, led 20-member team, handled MIS & SLA delivery.</p>
     </div>
 
     <div class="card">
-        <h3>NAV IT Consulting - Project Manager</h3>
-        <p>Led Power Platform + SAP HANA projects, managed full lifecycle delivery.</p>
+        <h3>NAV IT Consulting</h3>
+        <p>Led Power Platform + SAP HANA integration projects.</p>
     </div>
 
     <div class="card">
-        <h3>Efficient India - Project Manager</h3>
-        <p>ERP implementations, cloud deployment (AWS, Azure), API integrations.</p>
+        <h3>Efficient India</h3>
+        <p>ERP implementations and cloud deployments (AWS, Azure).</p>
+    </div>
+
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>MFO SAP App</h3>
+        <p>Automation solution integrated with SAP.</p>
     </div>
 
     <div class="card">
-        <h3>DEV IT SERV - Manager</h3>
-        <p>Agile SAP projects, sprint planning, DevOps improvements.</p>
-    </div>
-
-    <div class="card">
-        <h3>India HIV/AIDS Alliance</h3>
-        <p>Implemented SAP ERP, improved procurement efficiency by 30%.</p>
+        <h3>SAP Migration</h3>
+        <p>Finance system migration to SAP FICO.</p>
     </div>
 
 </section>
@@ -108,50 +172,21 @@ footer {
 <section>
     <h2>Skills</h2>
     <div class="skills">
-        <span>Agile</span>
         <span>SAP</span>
-        <span>S/4HANA</span>
         <span>AWS</span>
         <span>Azure</span>
+        <span>Agile</span>
         <span>Jira</span>
         <span>Power BI</span>
-        <span>MuleSoft</span>
     </div>
 </section>
 
-<section>
-    <h2>Projects</h2>
-
-    <div class="card">
-        <h3>MFO SAP App</h3>
-        <p>Power Platform + SAP integration for logistics automation.</p>
-    </div>
-
-    <div class="card">
-        <h3>SAP Finance Migration</h3>
-        <p>Migration of legacy systems to SAP FICO.</p>
-    </div>
-
-    <div class="card">
-        <h3>LANXESS Rollout</h3>
-        <p>SAP BN4L rollout with EWM/TM support.</p>
-    </div>
-
-</section>
-
-<section>
-    <h2>Achievements</h2>
-    <div class="card">
-        <p>Developed AI-based agricultural sprayer (ICAR Project)</p>
-    </div>
-</section>
-
-<section>
+<section id="contact">
     <h2>Contact</h2>
     <div class="card">
         <p>📞 +91 9606276138</p>
         <p>📧 saraswatdivyanshi29@gmail.com</p>
-        <p>🔗 LinkedIn: linkedin.com/in/devanshi-saraswat</p>
+        <p>🔗 linkedin.com/in/devanshi-saraswat</p>
     </div>
 </section>
 
