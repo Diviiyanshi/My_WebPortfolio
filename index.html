@@ -12,27 +12,19 @@
 html{scroll-behavior:smooth;}
 
 body{
-background:#0f172a;
+background:linear-gradient(135deg,#0f172a,#1e293b);
 color:#fff;
-transition:0.4s;
-}
-
-.light{
-background:#f1f5f9;
-color:#000;
 }
 
 /* NAV */
 nav{
-display:flex;justify-content:space-between;
-padding:20px 40px;
+display:flex;justify-content:space-between;padding:20px 40px;
 position:sticky;top:0;
 background:rgba(0,0,0,0.4);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
-
-nav a{color:inherit;text-decoration:none;margin-left:20px}
+nav a{color:#fff;text-decoration:none;margin-left:20px}
 
 /* HERO */
 .hero{text-align:center;padding:120px 20px;}
@@ -41,50 +33,34 @@ font-size:50px;
 background:linear-gradient(90deg,#3b82f6,#a855f7);
 -webkit-background-clip:text;color:transparent;
 }
-
 .typing{color:#a855f7;font-weight:600}
 
 .btn{
-margin-top:15px;padding:10px 20px;
-border-radius:25px;
+margin-top:20px;padding:12px 25px;border-radius:30px;
 background:linear-gradient(90deg,#3b82f6,#a855f7);
 border:none;color:#fff;cursor:pointer;
 }
 
 /* SECTION */
 section{padding:60px 20px;max-width:1100px;margin:auto}
+h2{margin-bottom:20px}
 
 /* CARD */
 .card{
 background:rgba(255,255,255,0.05);
 padding:20px;margin-bottom:20px;
 border-radius:15px;
-transition:0.3s;
+backdrop-filter:blur(10px);
+opacity:0;transform:translateY(30px);
+transition:0.6s;
 }
-.card:hover{transform:scale(1.03)}
-
-/* TIMELINE */
-.timeline{border-left:3px solid #a855f7;padding-left:20px}
-.timeline div{margin-bottom:20px}
-
-/* PROJECT GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+.card.show{opacity:1;transform:translateY(0)}
 
 /* SKILLS */
 .skills span{
 display:inline-block;padding:8px 15px;margin:5px;
 border-radius:20px;
 background:linear-gradient(90deg,#3b82f6,#a855f7);
-}
-
-/* CONTACT */
-input,textarea{
-width:100%;padding:10px;margin:10px 0;
-border-radius:8px;border:none;
 }
 
 /* FOOTER */
@@ -101,7 +77,6 @@ footer{text-align:center;padding:20px}
 <a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
-<button onclick="toggleMode()">🌙</button>
 </div>
 </nav>
 
@@ -109,33 +84,26 @@ footer{text-align:center;padding:20px}
 <h1>Devanshi Saraswat</h1>
 <p>I am a <span class="typing"></span></p>
 <button class="btn" onclick="document.getElementById('contact').scrollIntoView()">Hire Me</button>
+<br>
 <button class="btn" onclick="window.open('resume.pdf')">Download Resume</button>
 </div>
 
 <section id="about">
-<h2>About</h2>
-<div class="card">
-Project Manager with 7+ years experience in SAP, ERP and cloud solutions. Worked with global teams across Europe, Japan and APAC.
-</div>
+<h2>About Me</h2>
+<div class="card">Project Manager with 7+ years experience in SAP, ERP and cloud solutions. Worked with global teams across Europe, Japan and APAC.</div>
 </section>
 
 <section id="experience">
 <h2>Experience</h2>
-<div class="timeline">
-<div>NTT DATA – Managed projects & team</div>
-<div>NAV IT – SAP + Power Platform</div>
-<div>Efficient India – Cloud & ERP</div>
-<div>India HIV/AIDS Alliance – SAP Implementation</div>
-</div>
+<div class="card">NTT DATA – Managed edge projects & 20-member team</div>
+<div class="card">NAV IT – SAP + Power Platform projects</div>
+<div class="card">Efficient India – Cloud & ERP delivery</div>
 </section>
 
 <section id="projects">
 <h2>Projects</h2>
-<div class="grid">
-<div class="card">MFO SAP App</div>
-<div class="card">SAP Migration</div>
-<div class="card">LANXESS Rollout</div>
-</div>
+<div class="card">MFO SAP Integrated App</div>
+<div class="card">SAP Finance Migration</div>
 </section>
 
 <section>
@@ -149,12 +117,9 @@ Project Manager with 7+ years experience in SAP, ERP and cloud solutions. Worked
 <section id="contact">
 <h2>Contact</h2>
 <div class="card">
-<form action="mailto:saraswatdivyanshi29@gmail.com" method="post" enctype="text/plain">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea placeholder="Message"></textarea>
-<button class="btn">Send</button>
-</form>
+📞 9606276138 <br>
+📧 saraswatdivyanshi29@gmail.com <br>
+🔗 linkedin.com/in/devanshi-saraswat
 </div>
 </section>
 
@@ -163,24 +128,37 @@ Project Manager with 7+ years experience in SAP, ERP and cloud solutions. Worked
 </footer>
 
 <script>
-/* Typing */
+/* Typing Effect */
 const roles = ["Project Manager","SAP Consultant","Writer"];
-let i=0,j=0,text="",del=false;
+let i=0,j=0,current="",isDeleting=false;
+
 function type(){
 if(i<roles.length){
-if(!del && j<=roles[i].length){text=roles[i].substring(0,j++);}
-else if(del && j>=0){text=roles[i].substring(0,j--);}
-if(j==roles[i].length){del=true;setTimeout(type,1000);return;}
-if(j==0){del=false;i++;}
-document.querySelector(".typing").innerText=text;
-setTimeout(type,del?50:100);
-}}
+if(!isDeleting && j<=roles[i].length){
+current=roles[i].substring(0,j++);
+}
+else if(isDeleting && j>=0){
+current=roles[i].substring(0,j--);
+}
+if(j==roles[i].length){isDeleting=true;setTimeout(type,1000);return;}
+if(j==0){isDeleting=false;i++;}
+
+document.querySelector(".typing").innerText=current;
+setTimeout(type,isDeleting?50:100);
+}
+}
 type();
 
-/* DARK MODE */
-function toggleMode(){
-document.body.classList.toggle("light");
+/* Scroll Animation */
+const cards=document.querySelectorAll(".card");
+window.addEventListener("scroll",()=>{
+cards.forEach(card=>{
+const top=card.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+card.classList.add("show");
 }
+});
+});
 </script>
 
 </body>
